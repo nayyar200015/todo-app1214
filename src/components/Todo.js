@@ -53,13 +53,13 @@ import '../App.css';
 //         setItems(updateditems);
 //     }
 
-//     // edit the item
-//     //     When user click on edit button 
+// edit the item
+//     When user click on edit button 
 
-//     // 1: get the id and name of the data which user clicked to edit
-//     // 2: set the toggle mode to change the submit button into edit button
-//     // 3: Now update the value of the setInput with the new updated value to edit. 
-//     // 4: To pass the current element Id to new state variable for reference 
+// 1: get the id and name of the data which user clicked to edit
+// 2: set the toggle mode to change the submit button into edit button
+// 3: Now update the value of the setInput with the new updated value to edit. 
+// 4: To pass the current element Id to new state variable for reference 
 
 
 //     const editItem = (id) => {
@@ -82,7 +82,7 @@ import '../App.css';
 //     useEffect(() => {
 //         localStorage.setItem('lists', JSON.stringify(items))
 //     }, [items]);
-    
+
 //     return (
 //         <>
 //             <div className="main-div">
@@ -100,7 +100,7 @@ import '../App.css';
 //                             toggleSubmit ? <i className="fa fa-plus add-btn" title="Add Item" onClick={addItem}></i> :
 //                                 <i className="far fa-edit add-btn" title="Update Item" onClick={addItem}></i>
 //                         }
-                        
+
 //                     </div>
 
 //                     <div className="showItems">
@@ -132,13 +132,60 @@ import '../App.css';
 //     );
 // }
 
-const Todo=()=>{
-    return(
-        <>
-            <div className="container-fluid">
+const Todo = () => {
+    const [inputData, setInputData] = useState('');
+    const [items, setItem] = useState([]);
+    const addItem = () => {
+        if (!inputData) {
 
+        } else if (inputData) {
+            setItem([...items, inputData]);
+            console.log(items)
+        }
+    }
+    return (
+        <div className="container-fluid">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <figure>
+                            <img src='images/todo.svg' alt="todologo" />
+                            <figcaption>Add Your List Here ✌</figcaption>
+                        </figure>
+                    </div>
+                    <div className="col-12">
+                        <input
+                            type="text"
+                            placeholder="✍ Add Items..."
+                            value={inputData}
+                            onInput={(e) => setInputData(e.target.value)} />
+                        <i className="fa fa-plus add-btn" title="Add Item" onClick={addItem}></i>
+                    </div>
+
+                    {
+                        items.map((elem, ind) => {
+                            return (
+                                <div className="col-12" key={ind}>
+                                    <div className="eachitem">
+                                        <h3>{elem}</h3>
+                                        <div className="todo-btns">
+                                            <i className="far fa-edit add-btn" title="Edit Item"></i>
+                                            <i className="far fa-trash-alt add-btn" title="Delete Item" ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                    <div className="col-12">
+                        <div className="showItems">
+                            <button className="btn effect04" data-sm-link-text="Remove All"><span> CHECK LIST </span> </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </>
+        </div>
+
     )
 }
 
