@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import '../App.css';
 
-// to get the data from LS
+//* to get the data from LS
 const getLocalItems = () => {
     let list = localStorage.getItem('lists');
     console.log(list);
@@ -44,7 +44,7 @@ const Todo = () => {
     }
 
 
-    // delete the items
+    //* delete the items
     const deleteItem = (index) => {
         const updateditems = items.filter((elem) => {
             return index !== elem.id;
@@ -54,7 +54,7 @@ const Todo = () => {
     }
 
     // edit the item
-    //     When user clikc on edit button 
+    //     When user click on edit button 
 
     // 1: get the id and name of the data which user clicked to edit
     // 2: set the toggle mode to change the submit button into edit button
@@ -77,12 +77,12 @@ const Todo = () => {
     }
 
 
-    // remove all 
+    //* remove all 
     const removeAll = () => {
         setItems([]);
     }
 
-    // add data to localStorage
+    //* add data to localStorage
     useEffect(() => {
         localStorage.setItem('lists', JSON.stringify(items))
     }, [items]);
