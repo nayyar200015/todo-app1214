@@ -139,9 +139,26 @@ const Todo = () => {
         if (!inputData) {
 
         } else if (inputData) {
-            setItem([...items, inputData]);
-            console.log(items)
+            const allInputData = {
+                // * to create a unique id which is realtime time
+                id: new Date().getTime().toString(),
+                name: inputData
+            }
+            setItem([...items, allInputData]);
+            setInputData('');
         }
+    }
+    // * To delete a particular item
+    const deleteItem = (id) => {
+        const updatedItem = items.filter((elem) => {
+            return id !== elem.id;
+        })
+        setItem(updatedItem);
+    }
+
+    // * To remove all items
+    const removeAll = () => {
+        setItem([]);
     }
     return (
         <div className="container-fluid">
@@ -163,23 +180,24 @@ const Todo = () => {
                     </div>
 
                     {
-                        items.map((elem, ind) => {
+                        items.map((elem) => {
                             return (
-                                <div className="col-12" key={ind}>
+                                <div className="col-12" key={elem.id}>
                                     <div className="eachitem">
-                                        <h3>{elem}</h3>
+                                        <h3>{elem.name}</h3>
                                         <div className="todo-btns">
                                             <i className="far fa-edit add-btn" title="Edit Item"></i>
-                                            <i className="far fa-trash-alt add-btn" title="Delete Item" ></i>
+                                            <i className="far fa-trash-alt add-btn" title="Delete Item" onClick={() => deleteItem(elem.id)} ></i>
                                         </div>
                                     </div>
                                 </div>
                             )
                         })
                     }
+                    {/* To remove all items */}
                     <div className="col-12">
                         <div className="showItems">
-                            <button className="btn effect04" data-sm-link-text="Remove All"><span> CHECK LIST </span> </button>
+                            <button className="btn effect04" data-sm-link-text="Remove All" onClick={removeAll}><span> CHECK LIST </span> </button>
                         </div>
                     </div>
                 </div>

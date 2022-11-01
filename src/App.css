@@ -81,17 +81,15 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
-  line-height: 45px;
+  line-height: 30px;
   max-width: 160px;
-  position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  width: 100%;
 }
 .container-fluid .container .row .col-12 .showItems .btn:hover {
   text-decoration: none;
 }
-.container-fluid .container .row .col-12 .showItems .btn .effect04 {
+.container-fluid .container .row .col-12 .showItems .effect04 {
   --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
   display: var(--uismLinkDisplay);
   color: #000;
@@ -100,23 +98,23 @@
   transition-duration: 0.4s;
   overflow: hidden;
 }
-.container-fluid .container .row .col-12 .showItems .btn .effect04::before,
-.container-fluid .container .row .col-12 .showItems .btn .effect04 span {
+.container-fluid .container .row .col-12 .showItems .effect04::before,
+.container-fluid .container .row .col-12 .showItems .effect04 span {
   margin: 0 auto;
   transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
   transition-duration: 0.4s;
 }
-.container-fluid .container .row .col-12 .showItems .btn .effect04:hover {
+.container-fluid .container .row .col-12 .showItems .effect04:hover {
   background-color: rgb(85, 41, 220);
 }
-.container-fluid .container .row .col-12 .showItems .btn .effect04:hover span {
+.container-fluid .container .row .col-12 .showItems .effect04:hover span {
   transform: translateY(-400%) scale(-0.1, 20);
 }
-.container-fluid .container .row .col-12 .showItems .btn .effect04:hover::before {
+.container-fluid .container .row .col-12 .showItems .effect04:hover::before {
   letter-spacing: 0.05em;
   transform: translateY(0) scale(1, 1);
 }
-.container-fluid .container .row .col-12 .showItems .btn .effect04::before {
+.container-fluid .container .row .col-12 .showItems .effect04::before {
   content: attr(data-sm-link-text);
   color: #fff;
   position: absolute;
