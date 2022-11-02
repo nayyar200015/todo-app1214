@@ -70,26 +70,43 @@
                     display: flex;
                     align-items: center;
 
+                    &:hover {
+                        background-color: #fff;
+                        color: rgb(85, 41, 220);
+
+                        i {
+                            &:nth-of-type(1) {
+                                color: rgb(13, 209, 13);
+                            }
+
+                            &:nth-of-type(2) {
+                                color: red;
+                            }
+                        }
+                    }
+
                     h3 {
                         width: 77%;
+                        font-size: 1.55rem;
                     }
 
                     i {
                         position: absolute;
+                        font-size: 1.2rem;
+                        margin-bottom: 0.8rem;
 
                         &:nth-of-type(1) {
                             right: 2rem;
-
-                            &:hover {
-                                color: greenyellow;
+                            margin-right: 0.8rem;
+                            &:hover{
+                                color: green;
                             }
                         }
 
                         &:nth-of-type(2) {
                             right: 0.8rem;
-
-                            &:hover {
-                                color: red;
+                            &:hover{
+                                color: rgb(100, 4, 4);
                             }
                         }
                     }
