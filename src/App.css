@@ -8,7 +8,7 @@
 .container-fluid .container .row .col-12 {
   display: flex;
   justify-content: center;
-  padding-bottom: 0;
+  padding: 0 7%;
 }
 .container-fluid .container .row .col-12 figure {
   text-align: center;
@@ -25,7 +25,9 @@
 .container-fluid .container .row .col-12 input {
   outline: none;
   border: 0.1rem solid #ccc;
-  min-width: 55%;
+  min-width: -webkit-fill-available;
+  min-width: -moz-available;
+  min-width: stretch;
   height: 2.6rem;
   font-size: 1.55rem;
   line-height: 1.42857143;
@@ -34,18 +36,28 @@
   border-radius: 0.4rem;
   box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.08);
 }
-.container-fluid .container .row .col-12 i {
+.container-fluid .container .row .col-12 .add-btn {
   position: relative;
   right: 1.4rem;
   top: 0.7rem;
 }
-.container-fluid .container .row .col-12 i:hover {
+.container-fluid .container .row .col-12 .add-btn:hover {
   color: rgb(66, 135, 185);
+}
+.container-fluid .container .row .col-12 .edit-btn {
+  position: relative;
+  right: 1.4rem;
+  top: 0.7rem;
+}
+.container-fluid .container .row .col-12 .edit-btn:hover {
+  color: rgb(13, 209, 13);
 }
 .container-fluid .container .row .col-12 .eachitem {
   background-color: rgb(85, 41, 220);
   color: white;
-  width: 55%;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
   align-items: center;
   padding: 0 0 0 0.8rem;
   border-radius: 0.4rem;
@@ -54,6 +66,8 @@
   word-break: break-word;
   display: flex;
   align-items: center;
+  position: relative;
+  left: -6px;
 }
 .container-fluid .container .row .col-12 .eachitem:hover {
   background-color: #fff;
@@ -138,11 +152,6 @@
   transform: translateY(500%) scale(-0.1, 20);
 }
 
-@media screen and (max-width: 768px) {
-  .container-fluid .container .row .col-12 .eachitem {
-    width: 80%;
-  }
-}
 @media screen and (max-width: 539px) {
   .container-fluid .container .row .col-12 .eachitem h3 {
     width: 65%;
